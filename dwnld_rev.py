@@ -1,10 +1,10 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
 # Use webdriver_manager to automatically download and manage the ChromeDriver executable
-chrome_service = ChromeService(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=chrome_service)
+chrome_driver_path = ChromeDriverManager().install()
+driver = webdriver.Chrome(executable_path=chrome_driver_path)
+
 
 def download_csv(url, destination_folder, file_name):
     try:
