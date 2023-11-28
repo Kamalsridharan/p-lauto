@@ -12,7 +12,7 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox') 
 
 # Use webdriver_manager to automatically download and manage the ChromeDriver executable
-driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=chrome_options)
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
 def download_csv(url, destination_folder, file_name):
     try:
