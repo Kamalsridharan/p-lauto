@@ -22,5 +22,8 @@ jobs:
       run: |
         pip install -r requirements.txt
 
+    - name: Update webdriver_manager
+      run: pip install --upgrade webdriver_manager 
+
     - name: Run Selenium Script
       run: python dwnld_rev.py
