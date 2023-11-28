@@ -1,18 +1,10 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-import os
-import time
-import glob
-
-# Use virtual display for headless execution
-# (This is not needed if running on a system with a display)
-# with Display():
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
 
 # Use webdriver_manager to automatically download and manage the ChromeDriver executable
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+chrome_service = ChromeService(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=chrome_service)
 
 def download_csv(url, destination_folder, file_name):
     try:
