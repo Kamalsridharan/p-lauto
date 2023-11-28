@@ -9,7 +9,14 @@ import glob
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox') 
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_experimental_option('prefs', {'download.default_directory': '/path/to/download/directory'})
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--disable-dev-shm-usage')
+
+# Set pageLoadStrategy to none and specify a timeout
+chrome_options.add_experimental_option('pageLoadStrategy', 'none')
+chrome_options.add_argument('--timeout=120000')  # Set the timeout value in milliseconds
 
 # Use webdriver_manager to automatically download and manage the ChromeDriver executable
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
