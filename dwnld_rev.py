@@ -11,7 +11,7 @@ import glob
 with Display():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
-    chrome_driver_path = "/usr/local/bin/chromedriver"  # Update with the path to chromedriver on GitHub Actions
+    chrome_driver_path = "https://github.com/Kamalsridharan/p-lauto/blob/main/chromedriver.exe"  # Update with the path to chromedriver on GitHub Actions
 
     driver = webdriver.Chrome(executable_path=chrome_driver_path, options=chrome_options)
 
