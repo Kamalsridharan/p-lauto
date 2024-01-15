@@ -2,8 +2,7 @@ name: Selenium Workflow
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '20 13 * * *'  # 15:20 Paris time (UTC+2)
+
 
 jobs:
   run_selenium:
